@@ -95,3 +95,5 @@ x = layers.Dense(1, activation='sigmoid')(x)
 model = tf.keras.models.Model(base_model.input, x)
 
 model.compile(optimizer = tf.keras.optimizers.RMSprop(lr=0.0001), loss = 'binary_crossentropy',metrics = ['acc'])
+
+vgghist = model.fit(train_generator, validation_data = validation_generator, steps_per_epoch = 100, epochs = 10)
